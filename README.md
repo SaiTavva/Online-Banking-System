@@ -1,4 +1,4 @@
-# online-banking-system
+# Online-banking-system
 
 ## Abstract:      
 Online banking system allows a user to conduct financial transactions via the internet. Online banking is also called internet banking or web banking. Consumers aren't required to visit a bank branch to complete most of their basic banking transactions. They can do all of this at their own convenience, wherever they want—at home, at work, or on the go. Authentication and validation of user access is the major task in online banking systems. The proposed system is highly computerized in which the data related to user accounts will be secured and offers best services to the customers. This system enables the user to check their bank balance, pay bills and transfer money to other accounts. Users can check their bank statements and go paperless.  The main goal of the system is to automate the process carried out in the bank with improved performance as realize the vision of paperless banking.  
