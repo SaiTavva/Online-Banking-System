@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Check Balance</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.box {
+  margin: 30px;
+  width:500px;
+ border:1px green solid;
+ position:relative;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  background-color: #4CAF50; ;
+  border:none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+</style>
+</head>
+<body>
+<br><br><br>
+<center>
+<div class="box">
+<h2>Check Balance</h2><hr width=50%/>
+<form action="che.html" method="post">
+<table border=0 style="width:90%;">
+<tr><td style="width:30%;">
+<font size="3">Account Number*</font></td>
+<td><input type="tel" placeholder="Enter your Account number" name="accnumber"  pattern="[0-9]{8}" maxlength="8" title="Enter your 8-digit account number" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" required>
+</td></tr>
+<tr><td style="width:30%;"><font size="3">Password*</font></td>
+<td><input type="password" placeholder="Enter Password" name="upass"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" id="password" required>
+</td></tr>
+</table>
+<br>
+<button type="submit" class="button">Check Balance</button>
+
+</form>
+<br><br>
+</div></center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<p><hr>
+&copy;Td bank (APM Id: Serv_Tran_552)<br>
+
+Site best viewed at 1024 x 768 resolution in I.E 10 +, Mozilla 35 +, Google Chrome 35 +</b></font>
+</p>
+
+
+
+</body>
+</html>

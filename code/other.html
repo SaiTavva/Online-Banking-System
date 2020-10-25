@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+        <title>Payment Gateway</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.box {
+  margin: 30px;
+  width:500px;
+ border:1px green solid;
+ position:relative;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  background-color: #4CAF50; ;
+  border:none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+
+<center>
+<div class="box">
+<h2>Other Payment Options</h2><hr width=50%/>
+<form action="others.html" method="post">
+
+
+<table border=0 style="width:90%;">
+
+<tr><td style="width:30%;">
+<font size="3">Choose a card type:</font></td>
+<td>
+<input type="radio" name="debit" value="Debit">Debit
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="credit" value="Credit">Credit
+</td></tr>
+
+
+
+
+<tr><td style="width:30%;">
+<font size="3">Card Number:</font></td>
+<td><input type="tel" placeholder="Enter your card number" name="acnum"  pattern="[0-9]{8}"  title="Enter your card number" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="8" required>
+</td></tr>
+<tr><td style="width:30%;">
+<font size="3">CVV:</font></td>
+<td><input type="tel" placeholder="Enter 3-digit CVV" name="cvv"  pattern="[0-9]{3}"  title="Enter 3-digit CVV" maxlength="3" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="3" required>
+</td></tr>
+<tr><td style="width:30%;">
+<font size="3">Amount:</font></td>
+<td><input type="tel" placeholder="Enter amount" name="amt"  pattern=".{1,}"  title="Enter Amount to pay" maxlength="5" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" required>
+</td></tr>
+<tr><td style="width:30%;">
+<font size="3">Date of Expiry:</font></td>
+ <td><input type="date" name="exp">
+  </td></tr>
+
+
+
+</table>
+<br>
+<button type="submit" class="button">Pay</button>
+<br><br>
+</form>
+
+</div>
+</center>
+
+
+
+
+</body>
+</html>
+

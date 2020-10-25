@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+        <title>Tax Payment</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.box {
+  margin: 30px;
+  width:500px;
+ border:1px green solid;
+ position:relative;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  background-color: #4CAF50; ;
+  border:none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div> 
+
+
+<center>
+<div class="box">
+<h2>Tax Payment</h2><hr width=50%/>
+<form action="pay.html"  method="post">
+<table border=0 style="width:90%;">
+
+<tr><td style="width:30%;">
+<font size="3">Tax type:</font></td>
+<td><select name="type" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" required>
+  <option value="water">Water</option>
+  <option value="municipal">Municipal</option>
+  <option value="House">House</option>
+  <option value="property">Property</option>
+</select>
+</td></tr>
+
+
+
+
+
+
+<tr><td style="width:30%;">
+<font size="3">Challan No. :</font></td>
+<td><input type="tel" placeholder="Enter challan number" name="cha"  pattern="[0-9]{7}"  title="7-digit challan number" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="7" required>
+</td></tr>
+<tr><td style="width:30%;"><font size="3">Pan:</font></td>
+<td><input type="tel" placeholder="Enter your PAN number" name="pan"  pattern="[0-9]{10}"  title="10-digit PAN number " style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="10" required>
+</td></tr>
+<tr><td style="width:30%;"><font size="3">Name:</font></td>
+<td><input type="text" placeholder="Enter your name" name="name" pattern="[A-Za-z]{1,15}" title="name" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;"  required>
+</td></tr>
+
+<tr><td style="width:30%;"><font size="3">Address:</font></td>
+<td><input type="text" placeholder="Enter your Address" name="add" pattern="[A-Za-z]{1,50}" title="address" style="width:70% ; padding: 25px 10px;margin: 8px 0; box-sizing: border-box;"  required>
+</td></tr>
+
+<tr><td style="width:30%;"><font size="3">Assessment year:</font></td>
+<td><select id="year"></select>
+</td></tr>
+
+<tr><td style="width:30%;"><font size="3">Major Head:</font></td>
+<td><input type="tel" placeholder="Enter 4-digit Major Head" name="major" pattern="[0-9]{4}" title="major head" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="4" required>
+</td></tr>
+
+<tr><td style="width:30%;"><font size="3">Minor Head:</font></td>
+<td><input type="tel" placeholder="Enter 3-digit Minor Head" name="major" pattern="[0-9]{3}" title="minor head" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="3" required>
+</td></tr>
+
+</table>
+<br>
+<button type="submit"  class="button">Pay</button>
+
+</form>
+<br><br>
+</div></center>
+<p><hr>
+&copy;Td bank (APM Id: Serv_Tran_552)<br>
+
+Site best viewed at 1024 x 768 resolution in I.E 10 +, Mozilla 35 +, Google Chrome 35 +</b></font>
+</p>
+
+<script>
+var start = 1999;
+var end = new Date().getFullYear();
+var options = "";
+for(var year = start ; year <=end; year++){
+  options += "<option>"+ year +"</option>";
+}
+document.getElementById("year").innerHTML = options;
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

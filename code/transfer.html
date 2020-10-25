@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Transfer</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+
+
+#GFG { 
+            text-decoration: none; 
+        } 
+
+body{
+background-size:cover;
+background-repeat:no-repeat;
+}
+
+
+
+div.transbox {
+  margin-left: 60px;
+  width:400px;
+ border:1px solid green;
+  opacity: 1;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+position:absolute;
+color:black;
+font-family: Arial, Helvetica, sans-serif;
+background-color:white;
+margin-left:500px;
+}
+
+.capbox {
+	background-color: #92D433;
+	border: #B3E272 0px solid;
+	border-width: 0px 12px 0px 0px;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 40px 8px 8px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>   
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+
+
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div>
+<br>
+
+<form id="reg_form" action="tra.html" method="post" class=container onsubmit="return checkform(this);">
+<div class="transbox">
+<br>
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter your username" name="uname" pattern=".{6,}" title="Six or more characters" style="width:60% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Recepient*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter the name of Recepient" name="rname" pattern=".{6,}" title="Six or more characters" style="width:60% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+
+
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" placeholder="Enter Account number of recepient" name="unnumber" style="width:60% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;"  maxlength=8 title="Enter your 8-digit account number"  required>
+<br>
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFSC Number*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" placeholder="Enter IFSC code of recepient" name="ucode" style="width:60% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;"  maxlength=11 title="Enter the 11-digit IFSC code of recepient" required>
+<br>
+
+
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" placeholder="Enter Password" name="upass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="password" style="width:60%; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+
+<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter amount to send" name="uname" pattern=".{1,}" title="one or more characters(limit per day:99,999/-)" maxlength="5" style="width:60% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+
+
+
+<div class="w3-container">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+</div>
+</div>
+</div>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="button button1">Send</button>
+&nbsp;&nbsp;&nbsp;&nbsp
+<button type="reset" class="button button1">Reset</button>
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</form>
+
+<script language='javascript' type='text/javascript'>
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+
+
+</script>
+<br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

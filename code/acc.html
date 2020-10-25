@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin Homepage</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+
+div.transbox {
+  
+  width:60%;
+
+ background-color:white;
+
+  
+position:absolute;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+margin-left:500px;
+}
+
+p{
+margin-top:450px;
+}
+
+
+</style>
+     </head>   
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div>
+
+<div class="transbox">
+<br>
+<form action="accs.html" method="post" name="form">
+
+  
+
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter username" pattern=".{6,}" title="Six or more characters"  name="unm" style="width:35% ; padding: 9px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+
+
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email-id*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="emailaddress" style="width:35% ; padding: 9px 20px;margin: 8px 0; box-sizing: border-box;" placeholder="Enter valid Email-id" required><br>
+
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DOB*</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="dob" style="width:35% ; padding: 9px 20px;margin: 8px 0; box-sizing: border-box;" placeholder="Enter your date-of-birth" required><br>
+
+  
+
+
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile-number*:</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="unph" pattern="[0-9]{10}" maxlength="10" title="numbers only" placeholder="Enter your Mobile number" style="width:35% ; padding: 9px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identification-number*:</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="id" pattern="[0-9]{12}" maxlength="12" title="numbers only" placeholder="Enter your Identificaton number(DL,passport etc..)" style="width:35% ; padding: 9px 20px;margin: 8px 0; box-sizing: border-box;" required>
+<br>
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gender:</font>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="male"> Male&nbsp;
+<input type="radio" name="gender" value="female"> Female&nbsp;
+<input type="radio" name="gender" value="other"> Other 
+<br><br>
+<font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose an account:</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="acc" value="TD Unlimited Chequing Account">TD Unlimited Chequing Account<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="acc" value="TD All-Inclusive Banking Plan">TD All-Inclusive Banking Plan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="acc" value="TD Every Day Savings Account"> TD Every Day Savings Account
+<br><br>
+
+
+
+<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" onclick="myFunction()" class="button button1">submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp
+<button type="reset" class="button button1">Reset</button>
+
+<br><br>
+
+
+
+</form>
+
+
+</div>
+
+<script>
+
+function myFunction() {
+var x = document.forms["form"]["unm"].value;
+var y = document.forms["form"]["unph"].value;
+var a = document.forms["form"]["id"].value;
+var b = document.forms["form"]["gender"].value;
+var c = document.forms["form"]["acc"].value;
+
+  if (x == "" || y==""||a==""|| b == ""|| c == "") {
+alert("One more feilds not filled.Please try again");
+   
+return false;
+  
+  }
+
+else
+{alert("Your request for Account Creation is being processed...")}
+}
+
+</script>
+
+</body>
+</html>

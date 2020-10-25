@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>NewUserRegister</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.logo{
+background-color:green;
+color:white;
+}
+body{
+background-image:url("rak.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
+* {
+  box-sizing: border-box;
+}
+.boxed {
+position:absolute;
+left:50px;
+color:black;
+background-color:none;
+opacity:0.7;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.capbox {
+	background-color: #92D433;
+	border: #B3E272 0px solid;
+	border-width: 0px 12px 0px 0px;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 40px 8px 8px;
+	}
+
+ 
+
+
+
+
+
+
+
+</style></head>
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div>
+<br>
+
+
+<form action="explore.html"  method="post" onsubmit="return checkform(this);">
+<div class="boxed" style="opacity:0.8;">
+<p text-decoration=none><font size="6">&nbsp;&nbsp;NewUser Register</font>
+<br><br>
+<font size="4">&nbsp;&nbsp;&nbsp;Username*:</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="unm" placeholder="Enter your name" pattern=".{6,}" title="Six or more characters" required><br>
+<font size="4">&nbsp;&nbsp;&nbsp;Set Password*:</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="upass" placeholder="Enter new password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="password" required><br>
+<font size="4">&nbsp;&nbsp;&nbsp;Re-enter Password*:</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="pass" placeholder="Enter new password" oninput="check(this)"  id="password_confirm"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+
+
+
+
+
+
+<font size="4">&nbsp;&nbsp;&nbsp;Account number*:</font>&nbsp;&nbsp;&nbsp;<input type="text" name="unm" placeholder="Enter your account number" pattern="[0-9]{8}" title="Enter your 8-digit account number" maxlength="8" required><br>
+
+
+<font size="4">&nbsp;&nbsp;&nbsp;CIF Number*:</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cif" pattern="[0-9]{3}" title="Enter your 3-digit CIF number" maxlength="3" placeholder="Enter your CIF number" required><br>
+
+<font size="4">&nbsp;&nbsp;&nbsp;Branch Code*:</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="branch" pattern="[0-9]{5}" title="Enter your 5-digit branch code" maxlength="5"  placeholder="Enter your Branch code" required><br>
+
+
+<font size="4">&nbsp;&nbsp;&nbsp;Country:</font>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="country">
+<option value="none">Select</option>
+<option value="Albenia">Albenia</option>
+<option value="Armenia">Armenia</option>
+<option value="Argentina">Argentina</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Barbados">Barbados</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Czech. Republic">Czech. Reublic</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Canada">Canada</option>
+<option value="Denmark">Denmark</option>
+<option value="Finland">Finland</option>
+<option value="England">England</option>
+<option value="India">India</option>
+<option value="Georgia">Georgia</option>
+<option value="Hungary">Hungary</option>
+<option value="Paraguay">Paraguay</option>
+<option value="SriLanka">SriLanka</option>
+<option value="Thailand">Thailand</option>
+<option value="Turkey">Turkey</option>
+<option value="Zambia">Zambia</option>
+</select><br>
+
+<font size="4">&nbsp;&nbsp;&nbsp;Registered Mobile-number*:</font>&nbsp;<input type="tel" name="unph" pattern="[0-9]{10}" placeholder="Enter your Mobile number" title="Enter your mobile number" maxlength="10" required>&nbsp;&nbsp;&nbsp;
+<br><br>
+<div class="w3-container">
+&nbsp;&nbsp;&nbsp;<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+</div>
+</div>
+</div>
+
+<br>
+
+   &nbsp;&nbsp;&nbsp; <button type="submit" class="button button1">Login</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="reset" class="button button1">Reset</button>
+<br><br>
+</div></div>
+
+</form>
+
+<script type="text/javascript">
+
+
+
+
+
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+
+
+    function check(input) {
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+
+
+
+
+</script>
+
+
+
+
+
+ </body>
+
+
+
+</html>

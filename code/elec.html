@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+        <title>Payment Gateway</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.box {
+  margin: 30px;
+  width:500px;
+ border:1px green solid;
+ position:relative;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  background-color: #4CAF50; ;
+  border:none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div> 
+
+<br>
+<center>
+<div class="box">
+<h2>Electricity Bill</h2><hr width=50%/>
+<form action="pay.html" method="post">
+
+
+<table border=0 style="width:90%;">
+
+
+
+
+<tr><td style="width:30%;">
+<font size="3">Receipt Number:</font></td>
+<td><input type="tel" placeholder="Enter valid Service number" name="elec"  pattern="[0-9]{8}"  title="8-digit service number" style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="8" required>
+</td></tr>
+
+
+</table>
+<br>
+<button type="submit" class="button">Pay</button>
+<br><br>
+</form>
+
+</div>
+</center>
+<br><br>
+<br><br>
+
+
+<p><hr>
+&copy;Td bank (APM Id: Serv_Tran_552)<br>
+
+Site best viewed at 1024 x 768 resolution in I.E 10 +, Mozilla 35 +, Google Chrome 35 +</b></font>
+</p>
+
+
+</body>
+</html>
+

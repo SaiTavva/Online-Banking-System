@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+        <title>Mobile Recharge</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.box {
+  margin: 30px;
+  width:500px;
+ border:1px green solid;
+ position:relative;
+color:green;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  background-color: #4CAF50; ;
+  border:none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+<center>
+<div class="box">
+<h2>Mobile Recharge</h2><hr width=50%/>
+<form action="pay.html"  method="post">
+<table border=0 style="width:90%;">
+
+<tr><td style="width:30%;"><font size="3">Mobile Number:</font></td>
+<td><input type="tel" placeholder="Enter your Mobile number" name="mob"  pattern="[0-9]{10}"  title="10-digit mobile number " style="width:70% ; padding: 5px 5px;margin: 8px 0; box-sizing: border-box;" maxlength="10" required>
+</td></tr>
+
+
+
+</table>
+<br>
+<button type="submit"  class="button">Recharge</button>
+<br><br>
+
+</form>
+<br><br>
+</div>
+</body>
+</html>

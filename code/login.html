@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login page</title>
+        
+        <link rel="stylesheet" href="style.css">
+<style>
+.capbox {
+	background-color: #92D433;
+	border: #B3E272 0px solid;
+	border-width: 0px 12px 0px 0px;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 40px 8px 8px;
+	}
+
+.logo{
+background-color:green;
+color:white;
+}
+body{
+background-image:url("bak.jpg");
+background-size:cover;
+background-repeat:no-repeat;}
+#GFG { 
+            text-decoration: none; 
+        } 
+
+
+
+div.transbox {
+  margin: 30px;
+  width:410px;
+ 
+  opacity: 0.95;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+position:absolute;
+color:black;
+font-family: Arial, Helvetica, sans-serif;
+background-color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+     </head>   
+<body>
+<div class="logo">
+<img leftmargin="50" src="logo.jpg" align="bottom"/>
+
+<a href="login.html" class="button" style="margin-left:900px;margin-top:10px;">Login</a>
+
+</div>
+
+
+<div class="topnav">
+<a href="hom.html"><font size="4">Home</font></a>
+<a href="about.html"><font size="4">About</font></a>
+<a href="contact.html"><font size="4">Contact & Support</font></a>
+
+</div>
+
+<div class="transbox">
+
+
+<form name="form" action="lo.html" method="post" onsubmit="return checkform(this);">
+
+  
+<p text-decoration=none><font size="6">&nbsp;&nbsp;Login</font><p>
+<label for="username"><font size="4">&nbsp;&nbsp;&nbsp;Username*</font></label><br>
+&nbsp;&nbsp;&nbsp;
+<input type="text"  placeholder="Enter username" pattern=".{6,}" oninvalid="alert('Please fill the USERNAME feild with correct input');" title="Six or more characters" name="unm" style="width:70% ; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+&nbsp;<a href="register.html" id = "GFG"><font color="green" size="3"><br>&nbsp;&nbsp;&nbsp;<b>New User ? Register here</b></a></font>&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+<label for="psw"><font size="4">&nbsp;&nbsp;&nbsp;Password*</font></label>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<input type="password" oninvalid="alert('Please fill the PASSWORD feild with correct input');"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter Password" name="upass" style="width:70%; padding: 12px 20px;margin: 8px 0; box-sizing: border-box;" required>
+&nbsp;<a href="pass.html" id = "GFG"><font color="green" size="3"><br>&nbsp;&nbsp;&nbsp;<b>Forgot Password?Click Here</b></a></font>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+
+<div class="w3-container">
+&nbsp;&nbsp;&nbsp;<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+</div>
+</div>
+</div>
+<br>
+&nbsp;&nbsp;<button type="submit" onclick="return validateForm()" class="button button1">Login</button>
+&nbsp;&nbsp;&nbsp;&nbsp
+<button type="reset" class="button button1">Reset</button>
+
+</div>
+</form>
+<script type="text/javascript">
+
+// Captcha Script
+
+function checkform(theform){
+
+
+var why = "";
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+
+
+
+
+</script>
+</body>
+</html>
